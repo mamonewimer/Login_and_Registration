@@ -1,14 +1,12 @@
 export default function Validation(values) {
   let errors = {};
 
-  // Name validation
   if (!values.name.trim()) {
       errors.name = "Name is required";
   } else {
       errors.name = "";
   }
 
-  // Email validation
   if (!values.email) {
       errors.email = "Email is required";
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
@@ -17,7 +15,6 @@ export default function Validation(values) {
       errors.email = "";
   }
 
-  // Password validation
   if (!values.password) {
       errors.password = "Password is required";
   } else if (values.password.length < 8) {
